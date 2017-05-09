@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "BaseNavigationController.h"
+#import "LoginVC.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LoginVC *loginVC = [LoginVC getFromStoryboard];
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVC];
+    
+    //check if authorizied
+//    if ([[FIRServerManager sharedManager]isAuth]) {
+//        initVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
+//    } else {
+//        initVC = [mainStoryboard instantiateInitialViewController];
+//    }
+    
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+
     // Override point for customization after application launch.
     return YES;
 }
