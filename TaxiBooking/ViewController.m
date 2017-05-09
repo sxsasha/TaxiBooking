@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Driver.h"
+#import "Globals.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    Driver *driver = [[Driver alloc] initWithLogin:@"tia61@example.org" andPassword:@"secret"];
+    [driver authorizeWithBlock:^(NSError *error) {
+        if (error)
+            NSLog(@"%@", error.localizedDescription);
+        else
+            NSLog(@"Authorized");
+        
+//        [driver logout];
+        NSURL *url = [NSURL URLWithString:driver.photoURL];
+        [Globals loadImageFromURL:url andCompletionBlock:^(UIImage *image) {
+            NSLog(@"photo loaded");
+            NSLog(@"%@", image);
+        }];
+    }];
+    
+    
 }
 
 

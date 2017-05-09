@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D8BBFCE0E9F89C8947BE5894 /* libPods-TaxiBooking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */; };
+		EA75A03F1EC1E32C00699214 /* BookingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A03E1EC1E32C00699214 /* BookingManager.m */; };
+		EA75A0421EC1E33C00699214 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0411EC1E33C00699214 /* Globals.m */; };
+		EA75A0461EC1E78100699214 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0451EC1E78100699214 /* Driver.m */; };
+		EA75A0491EC1F17800699214 /* BookingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0481EC1F17800699214 /* BookingModel.m */; };
 		EAF39A9F1EC1C4EE003DE2D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39A9E1EC1C4EE003DE2D5 /* main.m */; };
 		EAF39AA21EC1C4EE003DE2D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */; };
 		EAF39AA51EC1C4EE003DE2D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA41EC1C4EE003DE2D5 /* ViewController.m */; };
@@ -20,6 +24,14 @@
 		1F6394EA9DEBB00B38BE3252 /* Pods-TaxiBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBooking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking.debug.xcconfig"; sourceTree = "<group>"; };
 		7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiBooking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking.release.xcconfig"; sourceTree = "<group>"; };
+		EA75A03D1EC1E32C00699214 /* BookingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingManager.h; sourceTree = "<group>"; };
+		EA75A03E1EC1E32C00699214 /* BookingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingManager.m; sourceTree = "<group>"; };
+		EA75A0401EC1E33C00699214 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		EA75A0411EC1E33C00699214 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		EA75A0441EC1E78100699214 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
+		EA75A0451EC1E78100699214 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Driver.m; sourceTree = "<group>"; };
+		EA75A0471EC1F17800699214 /* BookingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingModel.h; sourceTree = "<group>"; };
+		EA75A0481EC1F17800699214 /* BookingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingModel.m; sourceTree = "<group>"; };
 		EAF39A9A1EC1C4EE003DE2D5 /* TaxiBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF39A9E1EC1C4EE003DE2D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAF39AA01EC1C4EE003DE2D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +73,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EA75A0431EC1E40900699214 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA75A0441EC1E78100699214 /* Driver.h */,
+				EA75A0451EC1E78100699214 /* Driver.m */,
+				EA75A0471EC1F17800699214 /* BookingModel.h */,
+				EA75A0481EC1F17800699214 /* BookingModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		EAF39A911EC1C4EE003DE2D5 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +107,11 @@
 			children = (
 				EAF39AA01EC1C4EE003DE2D5 /* AppDelegate.h */,
 				EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */,
+				EA75A0401EC1E33C00699214 /* Globals.h */,
+				EA75A0411EC1E33C00699214 /* Globals.m */,
+				EA75A03D1EC1E32C00699214 /* BookingManager.h */,
+				EA75A03E1EC1E32C00699214 /* BookingManager.m */,
+				EA75A0431EC1E40900699214 /* Models */,
 				EAF39AA31EC1C4EE003DE2D5 /* ViewController.h */,
 				EAF39AA41EC1C4EE003DE2D5 /* ViewController.m */,
 				EAF39AA61EC1C4EE003DE2D5 /* Main.storyboard */,
@@ -227,8 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF39AA51EC1C4EE003DE2D5 /* ViewController.m in Sources */,
+				EA75A0461EC1E78100699214 /* Driver.m in Sources */,
 				EAF39AA21EC1C4EE003DE2D5 /* AppDelegate.m in Sources */,
+				EA75A0491EC1F17800699214 /* BookingModel.m in Sources */,
 				EAF39A9F1EC1C4EE003DE2D5 /* main.m in Sources */,
+				EA75A0421EC1E33C00699214 /* Globals.m in Sources */,
+				EA75A03F1EC1E32C00699214 /* BookingManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +423,7 @@
 				EAF39AB31EC1C4EE003DE2D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
