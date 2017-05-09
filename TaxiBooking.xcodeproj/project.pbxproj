@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8BBFCE0E9F89C8947BE5894 /* libPods-TaxiBooking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */; };
 		EAF39A9F1EC1C4EE003DE2D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39A9E1EC1C4EE003DE2D5 /* main.m */; };
 		EAF39AA21EC1C4EE003DE2D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */; };
 		EAF39AA51EC1C4EE003DE2D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA41EC1C4EE003DE2D5 /* ViewController.m */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F6394EA9DEBB00B38BE3252 /* Pods-TaxiBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBooking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking.debug.xcconfig"; sourceTree = "<group>"; };
+		7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiBooking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking.release.xcconfig"; sourceTree = "<group>"; };
 		EAF39A9A1EC1C4EE003DE2D5 /* TaxiBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF39A9E1EC1C4EE003DE2D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAF39AA01EC1C4EE003DE2D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8BBFCE0E9F89C8947BE5894 /* libPods-TaxiBooking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19F913EFEF62B99092B85E72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F6394EA9DEBB00B38BE3252 /* Pods-TaxiBooking.debug.xcconfig */,
+				9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF30937FED4EE8D256D0F97D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EAF39A911EC1C4EE003DE2D5 = {
 			isa = PBXGroup;
 			children = (
 				EAF39A9C1EC1C4EE003DE2D5 /* TaxiBooking */,
 				EAF39A9B1EC1C4EE003DE2D5 /* Products */,
+				19F913EFEF62B99092B85E72 /* Pods */,
+				DF30937FED4EE8D256D0F97D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAF39AB11EC1C4EE003DE2D5 /* Build configuration list for PBXNativeTarget "TaxiBooking" */;
 			buildPhases = (
+				D9C0E52F8736F1BAF6C7EBF2 /* [CP] Check Pods Manifest.lock */,
 				EAF39A961EC1C4EE003DE2D5 /* Sources */,
 				EAF39A971EC1C4EE003DE2D5 /* Frameworks */,
 				EAF39A981EC1C4EE003DE2D5 /* Resources */,
+				AC67B4C23FD1E6469A615642 /* [CP] Embed Pods Frameworks */,
+				F803FA6382B9A860BA1C8861 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC67B4C23FD1E6469A615642 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C0E52F8736F1BAF6C7EBF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F803FA6382B9A860BA1C8861 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAF39A961EC1C4EE003DE2D5 /* Sources */ = {
@@ -273,6 +348,7 @@
 		};
 		EAF39AB21EC1C4EE003DE2D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F6394EA9DEBB00B38BE3252 /* Pods-TaxiBooking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TK347G5S3D;
@@ -285,6 +361,7 @@
 		};
 		EAF39AB31EC1C4EE003DE2D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TK347G5S3D;
