@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UCD-Oi-htQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="l4X-ay-cwd">
+            <objects>
+                <viewController id="UCD-Oi-htQ" customClass="LoginVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZSR-EH-wR3"/>
+                        <viewControllerLayoutGuide type="bottom" id="4I7-Zh-Aci"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zgj-ql-kpz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-pf-IPQ">
+                                <rect key="frame" x="51" y="103" width="273" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-SP-Qdh">
+                                <rect key="frame" x="51" y="153" width="273" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-ut-d0Y">
+                                <rect key="frame" x="253" y="209" width="71" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jWc-ut-d0Y" secondAttribute="height" multiplier="111:44" id="ifS-cV-G7H"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Log In">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name=".SFNSText"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="logIn:" destination="UCD-Oi-htQ" eventType="touchUpInside" id="nBo-pm-yfu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94184255599975586" green="0.94253033399581909" blue="0.94878667593002319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZcL-pf-IPQ" firstAttribute="top" secondItem="ZSR-EH-wR3" secondAttribute="bottom" constant="83" id="Pzu-cB-lrM"/>
+                            <constraint firstItem="ZcL-pf-IPQ" firstAttribute="centerX" secondItem="zgj-ql-kpz" secondAttribute="centerX" id="aUK-mh-7up"/>
+                            <constraint firstItem="jWc-ut-d0Y" firstAttribute="top" secondItem="vDh-SP-Qdh" secondAttribute="bottom" constant="26" id="e6f-Le-cH7"/>
+                            <constraint firstItem="jWc-ut-d0Y" firstAttribute="trailing" secondItem="vDh-SP-Qdh" secondAttribute="trailing" id="gr7-ne-Eub"/>
+                            <constraint firstItem="vDh-SP-Qdh" firstAttribute="width" secondItem="ZcL-pf-IPQ" secondAttribute="width" id="iJv-r9-SCV"/>
+                            <constraint firstItem="vDh-SP-Qdh" firstAttribute="leading" secondItem="ZcL-pf-IPQ" secondAttribute="leading" id="vFL-4U-0FP"/>
+                            <constraint firstItem="vDh-SP-Qdh" firstAttribute="top" secondItem="ZcL-pf-IPQ" secondAttribute="bottom" constant="20" id="wCk-RG-T4i"/>
+                            <constraint firstItem="ZcL-pf-IPQ" firstAttribute="width" secondItem="zgj-ql-kpz" secondAttribute="height" multiplier="273:667" id="zx9-a1-uGI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logInButton" destination="jWc-ut-d0Y" id="gMA-5F-yIS"/>
+                        <outlet property="passwordField" destination="vDh-SP-Qdh" id="hp2-gd-MSG"/>
+                        <outlet property="usernameField" destination="ZcL-pf-IPQ" id="OPh-NJ-n9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AQ-hV-nxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1448.8" y="-228.03598200899552"/>
+        </scene>
+    </scenes>
+</document>
