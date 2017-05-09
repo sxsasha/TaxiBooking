@@ -14,6 +14,14 @@
 
 @implementation BookingDetailsVC
 
+
++ (BookingDetailsVC *)getFromStoryboard {
+    NSString *name = NSStringFromClass([self class]);
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:name bundle:nil];
+    BookingDetailsVC *vc = [mainStoryboard instantiateInitialViewController];
+    return vc;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

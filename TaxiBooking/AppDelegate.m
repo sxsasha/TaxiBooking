@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "BaseNavigationController.h"
 #import "LoginVC.h"
+@import GoogleMaps;
+
+#define GoogleApi  @"AIzaSyDx4GFZHF_XYKDtqZEv80P8E85CofbLBLU"
+
 
 @interface AppDelegate ()
 
@@ -16,8 +20,18 @@
 
 @implementation AppDelegate
 
+#pragma mark - Initializied methods
+
+- (void)configGoogle {
+    [GMSServices provideAPIKey:GoogleApi];
+}
+
+
+#pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self configGoogle];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginVC *loginVC = [LoginVC getFromStoryboard];

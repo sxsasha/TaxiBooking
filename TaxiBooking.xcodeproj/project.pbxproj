@@ -15,7 +15,7 @@
 		975F46DF1EC1E69000F143BC /* ProfileBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975F46DE1EC1E69000F143BC /* ProfileBaseView.m */; };
 		975F46E21EC1E89F00F143BC /* BookingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 975F46E11EC1E89F00F143BC /* BookingCell.m */; };
 		975F46E61EC1F97E00F143BC /* BookingDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 975F46E51EC1F97E00F143BC /* BookingDetailsVC.m */; };
-		975F46E81EC1F9BF00F143BC /* BookingDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975F46E71EC1F9BF00F143BC /* BookingDetailVC.storyboard */; };
+		975F46E81EC1F9BF00F143BC /* BookingDetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975F46E71EC1F9BF00F143BC /* BookingDetailsVC.storyboard */; };
 		D8BBFCE0E9F89C8947BE5894 /* libPods-TaxiBooking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */; };
 		EAF39A9F1EC1C4EE003DE2D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39A9E1EC1C4EE003DE2D5 /* main.m */; };
 		EAF39AA21EC1C4EE003DE2D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */; };
@@ -43,7 +43,7 @@
 		975F46E11EC1E89F00F143BC /* BookingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookingCell.m; path = GUI/views/BookingCell.m; sourceTree = "<group>"; };
 		975F46E41EC1F97E00F143BC /* BookingDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookingDetailsVC.h; path = GUI/BookingDetails/BookingDetailsVC.h; sourceTree = "<group>"; };
 		975F46E51EC1F97E00F143BC /* BookingDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookingDetailsVC.m; path = GUI/BookingDetails/BookingDetailsVC.m; sourceTree = "<group>"; };
-		975F46E71EC1F9BF00F143BC /* BookingDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BookingDetailVC.storyboard; path = GUI/BookingDetails/BookingDetailVC.storyboard; sourceTree = "<group>"; };
+		975F46E71EC1F9BF00F143BC /* BookingDetailsVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BookingDetailsVC.storyboard; path = GUI/BookingDetails/BookingDetailsVC.storyboard; sourceTree = "<group>"; };
 		9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking.release.xcconfig"; sourceTree = "<group>"; };
 		EAF39A9A1EC1C4EE003DE2D5 /* TaxiBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF39A9E1EC1C4EE003DE2D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			children = (
 				975F46E41EC1F97E00F143BC /* BookingDetailsVC.h */,
 				975F46E51EC1F97E00F143BC /* BookingDetailsVC.m */,
-				975F46E71EC1F9BF00F143BC /* BookingDetailVC.storyboard */,
+				975F46E71EC1F9BF00F143BC /* BookingDetailsVC.storyboard */,
 			);
 			name = BookingDetail;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 				EAF39AAD1EC1C4EE003DE2D5 /* LaunchScreen.storyboard in Resources */,
 				EAF39AAA1EC1C4EE003DE2D5 /* Assets.xcassets in Resources */,
 				EAF39AA81EC1C4EE003DE2D5 /* Main.storyboard in Resources */,
-				975F46E81EC1F9BF00F143BC /* BookingDetailVC.storyboard in Resources */,
+				975F46E81EC1F9BF00F143BC /* BookingDetailsVC.storyboard in Resources */,
 				975F46D81EC1E07C00F143BC /* BookingListVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

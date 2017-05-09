@@ -11,6 +11,7 @@
 
 #import "ProfileBaseView.h"
 #import "BookingCell.h"
+#import "BookingDetailsVC.h"
 
 
 @interface BookingListVC () <UITableViewDelegate, UITableViewDataSource>
@@ -68,10 +69,16 @@ static NSString *cellIdentifier = @"BookingCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BookingDetailsVC *detailsVC = [BookingDetailsVC getFromStoryboard];
+    [self.navigationController pushViewController:detailsVC animated:YES];
+}
+
 #pragma mark - Actions
 
 - (IBAction)logoutAction:(id)sender {
-
+    
 }
 
 @end

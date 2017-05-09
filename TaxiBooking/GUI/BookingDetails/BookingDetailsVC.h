@@ -10,4 +10,5 @@
 
 @interface BookingDetailsVC : UIViewController
 
++ (BookingDetailsVC *)getFromStoryboard;
 @end
