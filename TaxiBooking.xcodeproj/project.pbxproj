@@ -269,7 +269,7 @@
 				TargetAttributes = {
 					EAF39A991EC1C4EE003DE2D5 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = TK347G5S3D;
+						DevelopmentTeam = Y2Y3UF8R2H;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -499,11 +499,11 @@
 			baseConfigurationReference = 1F6394EA9DEBB00B38BE3252 /* Pods-TaxiBooking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TK347G5S3D;
+				DEVELOPMENT_TEAM = Y2Y3UF8R2H;
 				INFOPLIST_FILE = TaxiBooking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hrabovskyi.TaxiBooking;
+				PRODUCT_BUNDLE_IDENTIFIER = hrabovskyi.TaxiBooking.sasha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -513,11 +513,11 @@
 			baseConfigurationReference = 9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TK347G5S3D;
+				DEVELOPMENT_TEAM = Y2Y3UF8R2H;
 				INFOPLIST_FILE = TaxiBooking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hrabovskyi.TaxiBooking;
+				PRODUCT_BUNDLE_IDENTIFIER = hrabovskyi.TaxiBooking.sasha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
