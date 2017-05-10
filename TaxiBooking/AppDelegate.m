@@ -33,19 +33,19 @@
     
     [self configGoogle];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    LoginVC *loginVC = [LoginVC getFromStoryboard];
-    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVC];
-    
-    //check if authorizied
-//    if ([[FIRServerManager sharedManager]isAuth]) {
-//        initVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
-//    } else {
-//        initVC = [mainStoryboard instantiateInitialViewController];
-//    }
-    
-    self.window.rootViewController = nav;
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    LoginVC *loginVC = [LoginVC getFromStoryboard];
+//    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:loginVC];
+//    
+//    //check if authorizied
+////    if ([[FIRServerManager sharedManager]isAuth]) {
+////        initVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SWRevealViewController"];
+////    } else {
+////        initVC = [mainStoryboard instantiateInitialViewController];
+////    }
+//    
+//    self.window.rootViewController = nav;
+//    [self.window makeKeyAndVisible];
 
     // Override point for customization after application launch.
     return YES;

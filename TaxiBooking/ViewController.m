@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Driver.h"
-#import "Globals.h"
+#import "Utilities.h"
 
 @interface ViewController ()
 
@@ -29,10 +29,12 @@
         
 //        [driver logout];
         NSURL *url = [NSURL URLWithString:driver.photoURL];
-        [Globals loadImageFromURL:url andCompletionBlock:^(UIImage *image) {
+        [Utilities loadImageFromURL:url andCompletionBlock:^(UIImage *image) {
             NSLog(@"photo loaded");
             NSLog(@"%@", image);
         }];
+        
+        
     }];
     
     

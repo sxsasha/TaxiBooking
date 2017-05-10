@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class Booking;
+
 typedef enum : NSUInteger {
     MALEGENDER,
     FEMALEGENDER
 } GENDER;
-
 
 typedef void (^CompletionBlock)(NSError *error);
 
@@ -33,6 +34,8 @@ typedef void (^CompletionBlock)(NSError *error);
 
 @property (assign, nonatomic, readonly) NSInteger   supplierID;
 @property (strong, nonatomic, readonly) NSString*   supplier;
+
+@property (strong, nonatomic) NSArray<Booking *> *bookingList;
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithLogin:(NSString*)login andPassword:(NSString*)password;

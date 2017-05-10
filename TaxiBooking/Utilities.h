@@ -12,9 +12,10 @@
 
 typedef void (^CompletionImageBlock)(UIImage* image);
 
-@interface Globals : NSObject
+@interface Utilities : NSObject
 
 + (BOOL)isMail:(NSString*)email;
 + (void)loadImageFromURL:(NSURL*)imageURL andCompletionBlock:(CompletionImageBlock)completionBlock;
++ (NSDateFormatter*)shaderDateFormatter;
 
 @end

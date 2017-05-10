@@ -6,7 +6,7 @@
 //  Copyright © 2017 Tony Hrabovskyi. All rights reserved.
 //
 
-#import "Globals.h"
+#import "Utilities.h"
 #import "BookingManager.h"
 #import "Driver.h"
 
@@ -20,7 +20,7 @@
 - (instancetype)initWithLogin:(NSString*)login andPassword:(NSString*)password {
     self = [super init];
     
-    if ([Globals isMail:login]) {
+    if ([Utilities isMail:login]) {
         _email = login;
     } else {
         _username = login;

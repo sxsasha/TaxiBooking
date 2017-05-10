@@ -6,10 +6,12 @@
 //  Copyright © 2017 Tony Hrabovskyi. All rights reserved.
 //
 
-#import "Globals.h"
+#import "Utilities.h"
 #import <UIKit/UIImage.h>
 
-@implementation Globals
+@implementation Utilities
+
+static NSDateFormatter *dateFormatter;
 
 + (BOOL)isMail:(NSString*)email {
     NSArray<NSString*> *emailParts = [email componentsSeparatedByString:@"@"];
@@ -30,6 +32,15 @@
                                         completionBlock(image);
                                     });
     }] resume];
+}
+
++ (NSDateFormatter*)shaderDateFormatter {
+    
+    if (dateFormatter == nil) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    }
+    return dateFormatter;
 }
 
 @end

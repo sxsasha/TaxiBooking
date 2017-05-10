@@ -6,6 +6,10 @@
 //  Copyright © 2017 Tony Hrabovskyi. All rights reserved.
 //
 
+#import "Vehicle.h"
+#import "Customer.h"
+#import "PlacePoint.h"
+#import "Booking.h"
 #import "Driver.h"
 #import "BookingManager.h"
 
@@ -40,14 +44,28 @@ static BookingManager* instance;
         if (!error) {
             
             NSDictionary *answer = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"%@", answer);
+//            NSLog(@"%@", answer);
             
             NSInteger code = [[[answer objectForKey:@"response"] objectForKey:@"code"] integerValue];
             if (code == 1) {
                 NSDictionary *driverInfo = [answer objectForKey:@"driver"];
                 [driver putAdditionalInfo:driverInfo];
+                
+                NSMutableArray<Booking *> *bookingList = [NSMutableArray array];
+                
+                NSArray<NSDictionary*> *bookingInfo = [answer objectForKey:@"bookings"];
+                for (NSDictionary *dict in bookingInfo) {
+                    Booking *booking = [[Booking alloc] initWithDictionary:[dict objectForKey:@"booking"]];
+                    
+                    booking.vehicle = [[Vehicle alloc] initWithDictionary: [dict objectForKey:@"vehicle"]];
+                    booking.customer = [[Customer alloc] initWithDictionary:[dict objectForKey:@"customer"]];
+                    booking.pickupPoint = [[PlacePoint alloc] initWithDictionary:[dict objectForKey:@"pickupPoint"]];
+                    booking.dropoffPoint = [[PlacePoint alloc] initWithDictionary:[dict objectForKey:@"dropoffPoint"]];
+                    
+                    [bookingList addObject:booking];
+                }
             
-            
+                driver.bookingList = [bookingList copy];
             } else
                 error = [NSError errorWithDomain:@"backseatz.com" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Error with login. Check login and password."}];
         } else

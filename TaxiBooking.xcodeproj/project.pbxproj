@@ -18,9 +18,12 @@
 		975F46E81EC1F9BF00F143BC /* BookingDetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975F46E71EC1F9BF00F143BC /* BookingDetailsVC.storyboard */; };
 		D8BBFCE0E9F89C8947BE5894 /* libPods-TaxiBooking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CAE65B7E781491AD0589B /* libPods-TaxiBooking.a */; };
 		EA75A03F1EC1E32C00699214 /* BookingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A03E1EC1E32C00699214 /* BookingManager.m */; };
-		EA75A0421EC1E33C00699214 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0411EC1E33C00699214 /* Globals.m */; };
+		EA75A0421EC1E33C00699214 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0411EC1E33C00699214 /* Utilities.m */; };
 		EA75A0461EC1E78100699214 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0451EC1E78100699214 /* Driver.m */; };
-		EA75A0491EC1F17800699214 /* BookingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0481EC1F17800699214 /* BookingModel.m */; };
+		EA75A0491EC1F17800699214 /* Booking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75A0481EC1F17800699214 /* Booking.m */; };
+		EAEC06811EC2FED700733163 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEC06801EC2FED700733163 /* Vehicle.m */; };
+		EAEC06841EC2FEE400733163 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEC06831EC2FEE400733163 /* Customer.m */; };
+		EAEC06871EC2FF1B00733163 /* PlacePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEC06861EC2FF1B00733163 /* PlacePoint.m */; };
 		EAF39A9F1EC1C4EE003DE2D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39A9E1EC1C4EE003DE2D5 /* main.m */; };
 		EAF39AA21EC1C4EE003DE2D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */; };
 		EAF39AA51EC1C4EE003DE2D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF39AA41EC1C4EE003DE2D5 /* ViewController.m */; };
@@ -51,12 +54,18 @@
 		9A8B2E733703C0002AAD711D /* Pods-TaxiBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBooking.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBooking/Pods-TaxiBooking.release.xcconfig"; sourceTree = "<group>"; };
 		EA75A03D1EC1E32C00699214 /* BookingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingManager.h; sourceTree = "<group>"; };
 		EA75A03E1EC1E32C00699214 /* BookingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingManager.m; sourceTree = "<group>"; };
-		EA75A0401EC1E33C00699214 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
-		EA75A0411EC1E33C00699214 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		EA75A0401EC1E33C00699214 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		EA75A0411EC1E33C00699214 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		EA75A0441EC1E78100699214 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 		EA75A0451EC1E78100699214 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Driver.m; sourceTree = "<group>"; };
-		EA75A0471EC1F17800699214 /* BookingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingModel.h; sourceTree = "<group>"; };
-		EA75A0481EC1F17800699214 /* BookingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingModel.m; sourceTree = "<group>"; };
+		EA75A0471EC1F17800699214 /* Booking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Booking.h; sourceTree = "<group>"; };
+		EA75A0481EC1F17800699214 /* Booking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Booking.m; sourceTree = "<group>"; };
+		EAEC067F1EC2FED700733163 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		EAEC06801EC2FED700733163 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
+		EAEC06821EC2FEE400733163 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		EAEC06831EC2FEE400733163 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
+		EAEC06851EC2FF1B00733163 /* PlacePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacePoint.h; sourceTree = "<group>"; };
+		EAEC06861EC2FF1B00733163 /* PlacePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacePoint.m; sourceTree = "<group>"; };
 		EAF39A9A1EC1C4EE003DE2D5 /* TaxiBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF39A9E1EC1C4EE003DE2D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAF39AA01EC1C4EE003DE2D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,8 +174,14 @@
 			children = (
 				EA75A0441EC1E78100699214 /* Driver.h */,
 				EA75A0451EC1E78100699214 /* Driver.m */,
-				EA75A0471EC1F17800699214 /* BookingModel.h */,
-				EA75A0481EC1F17800699214 /* BookingModel.m */,
+				EA75A0471EC1F17800699214 /* Booking.h */,
+				EA75A0481EC1F17800699214 /* Booking.m */,
+				EAEC067F1EC2FED700733163 /* Vehicle.h */,
+				EAEC06801EC2FED700733163 /* Vehicle.m */,
+				EAEC06821EC2FEE400733163 /* Customer.h */,
+				EAEC06831EC2FEE400733163 /* Customer.m */,
+				EAEC06851EC2FF1B00733163 /* PlacePoint.h */,
+				EAEC06861EC2FF1B00733163 /* PlacePoint.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -195,8 +210,8 @@
 				975F46C71EC1CF6500F143BC /* GUI */,
 				EAF39AA01EC1C4EE003DE2D5 /* AppDelegate.h */,
 				EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */,
-				EA75A0401EC1E33C00699214 /* Globals.h */,
-				EA75A0411EC1E33C00699214 /* Globals.m */,
+				EA75A0401EC1E33C00699214 /* Utilities.h */,
+				EA75A0411EC1E33C00699214 /* Utilities.m */,
 				EA75A03D1EC1E32C00699214 /* BookingManager.h */,
 				EA75A03E1EC1E32C00699214 /* BookingManager.m */,
 				EA75A0431EC1E40900699214 /* Models */,
@@ -348,15 +363,18 @@
 			files = (
 				EAF39AA51EC1C4EE003DE2D5 /* ViewController.m in Sources */,
 				975F46E21EC1E89F00F143BC /* BookingCell.m in Sources */,
+				EAEC06871EC2FF1B00733163 /* PlacePoint.m in Sources */,
 				975F46DB1EC1E0A200F143BC /* BookingListVC.m in Sources */,
 				975F46E61EC1F97E00F143BC /* BookingDetailsVC.m in Sources */,
+				EAEC06841EC2FEE400733163 /* Customer.m in Sources */,
 				EA75A0461EC1E78100699214 /* Driver.m in Sources */,
 				EAF39AA21EC1C4EE003DE2D5 /* AppDelegate.m in Sources */,
 				975F46DF1EC1E69000F143BC /* ProfileBaseView.m in Sources */,
 				975F46CB1EC1CFE700F143BC /* LoginVC.m in Sources */,
-				EA75A0491EC1F17800699214 /* BookingModel.m in Sources */,
+				EAEC06811EC2FED700733163 /* Vehicle.m in Sources */,
+				EA75A0491EC1F17800699214 /* Booking.m in Sources */,
 				EAF39A9F1EC1C4EE003DE2D5 /* main.m in Sources */,
-				EA75A0421EC1E33C00699214 /* Globals.m in Sources */,
+				EA75A0421EC1E33C00699214 /* Utilities.m in Sources */,
 				EA75A03F1EC1E32C00699214 /* BookingManager.m in Sources */,
 				975F46D21EC1DB6300F143BC /* BaseNavigationController.m in Sources */,
 			);
