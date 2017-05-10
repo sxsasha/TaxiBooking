@@ -22,4 +22,5 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+- (void)putAdditionalInfo:(NSDictionary*)dictionary;
 @end

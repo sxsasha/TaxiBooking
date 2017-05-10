@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class Vehicle, Customer, PlacePoint;
+typedef void (^CompletionBlock)(NSError *error);
+
+@class Vehicle, Customer, PlacePoint, Driver;
 
 @interface Booking : NSObject
 
+@property (assign, nonatomic, readonly) NSInteger     driverID;
 @property (assign, nonatomic, readonly) NSInteger     bookingID;
 @property (strong, nonatomic, readonly) NSString*     reference;
 @property (strong, nonatomic, readonly) NSDate*       pickupDateTime;
@@ -32,6 +35,7 @@
 @property (strong, nonatomic) PlacePoint*   dropoffPoint;
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
-
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary andDriver:(Driver*)driver;
+- (void)loadingFullInfoWithBlock:(CompletionBlock)completionBlock;
+- (void)putAdditionData:(NSDictionary*)dictionary withError:(NSError*)error;
 @end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Driver.h"
 #import "Utilities.h"
+#import "Booking.h"
 
 @interface ViewController ()
 
@@ -34,7 +35,14 @@
             NSLog(@"%@", image);
         }];
         
-        
+        Booking *booking = [driver.bookingList firstObject];
+        [booking loadingFullInfoWithBlock:^(NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error.localizedDescription);
+            } else {
+                NSLog(@"Full info loaded, notes: %@", booking.notes);
+            }
+        }];
     }];
     
     

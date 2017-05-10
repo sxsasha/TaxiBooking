@@ -33,7 +33,7 @@
 - (void)authorizeWithBlock:(CompletionBlock)completionBlock {
     if (!_block) {
         _block = completionBlock;
-        [[BookingManager shaderManager] driverLogin:self];
+        [[BookingManager sharedManager] driverLogin:self];
     }
 }
 
@@ -59,7 +59,7 @@
 }
 
 - (void)logout {
-    [[BookingManager shaderManager] driverLogout:self];
+    [[BookingManager sharedManager] driverLogout:self];
     _isAuthorized = FALSE;
 }
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Driver;
+@class Driver, Booking;
 
 @protocol BookingDelegate <NSObject>
 
@@ -18,9 +18,9 @@
 
 @interface BookingManager : NSObject
 
-+ (BookingManager*)shaderManager;
++ (BookingManager*)sharedManager;
 
 - (void)driverLogin:(Driver*)driver;
 - (void)driverLogout:(Driver*)driver;
-
+- (void)bookingLoading:(Booking*)booking;
 @end

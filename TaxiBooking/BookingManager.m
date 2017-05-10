@@ -18,7 +18,7 @@
 static NSString *apiToken = @"32v7a8ojRSkLfwySlgCB5Zo5KckpopjpOH63qlqpqRv6F9hWGjlZUDZTzOIK";
 static BookingManager* instance;
 
-+ (BookingManager*)shaderManager {
++ (BookingManager*)sharedManager {
     if (instance == nil)
         instance = [[BookingManager alloc] init];
     
@@ -55,7 +55,7 @@ static BookingManager* instance;
                 
                 NSArray<NSDictionary*> *bookingInfo = [answer objectForKey:@"bookings"];
                 for (NSDictionary *dict in bookingInfo) {
-                    Booking *booking = [[Booking alloc] initWithDictionary:[dict objectForKey:@"booking"]];
+                    Booking *booking = [[Booking alloc] initWithDictionary:[dict objectForKey:@"booking"] andDriver:driver];
                     
                     booking.vehicle = [[Vehicle alloc] initWithDictionary: [dict objectForKey:@"vehicle"]];
                     booking.customer = [[Customer alloc] initWithDictionary:[dict objectForKey:@"customer"]];
@@ -101,6 +101,46 @@ static BookingManager* instance;
                 
             }
         }
+    }] resume];
+}
+
+- (void)bookingLoading:(Booking*)booking {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://backseatz.com/api/driverapp/booking-details"]];
+    NSString *postDataString = [NSString stringWithFormat:@"driverId=%li&bookingId=%li&api_token=%@", booking.driverID, booking.bookingID, apiToken];
+    
+    request.HTTPBody = [postDataString dataUsingEncoding:NSUTF8StringEncoding];;
+    request.HTTPMethod = @"POST";
+    
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSDictionary *dictionary;
+        if (!error) {
+            
+            NSDictionary *answer = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            NSLog(@"%@", answer);
+            
+            NSInteger code = [[[answer objectForKey:@"response"] objectForKey:@"code"] integerValue];
+            if (code == 1) {
+                
+                [booking.vehicle putAdditionalInfo:[answer objectForKey:@"vehicle"]];
+                [booking.pickupPoint putAdditionalInfo:[answer objectForKey:@"pickupPoint"]];
+                [booking.dropoffPoint putAdditionalInfo:[answer objectForKey:@"dropoffPoint"]];
+                
+                dictionary = [answer objectForKey:@"booking"];
+                
+                
+            } else {
+                NSString *errorMessage = [[answer objectForKey:@"response"] objectForKey:@"message"];
+                error = [NSError errorWithDomain:@"backseatz.com" code:0 userInfo:@{NSLocalizedDescriptionKey:errorMessage}];
+            }
+        } else
+            error = [NSError errorWithDomain:@"backseatz.com" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Check your Internet connection."}];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [booking putAdditionData:dictionary withError:error];
+        });
+        
     }] resume];
 }
 
