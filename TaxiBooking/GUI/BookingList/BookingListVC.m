@@ -53,7 +53,7 @@ static NSString *cellIdentifier = @"BookingCell";
     
     UIBarButtonItem *logout = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logoutAction:)];
     
-    logout.tintColor = LABELS_DARK_BACKGROUND;
+    logout.tintColor = DARK_GREY;
     self.navigationItem.leftBarButtonItem = logout;
 }
 

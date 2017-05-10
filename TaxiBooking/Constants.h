@@ -13,10 +13,10 @@
                      blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
                     alpha:1.0]
 
-#define MAIN_BUTTONS_BORDERS UIColorFromRGB(0xBE1522)
-#define BUTTONS_STATES  UIColorFromRGB(0xD01522)
-#define TEXT  UIColorFromRGB(0x000000)
-#define TEXT_BACKGROUND_BORDER  UIColorFromRGB(0x888888)
-#define LABELS_DARK_BACKGROUND     UIColorFromRGB(0x555555)
-#define LIGHT_BACKGROUND_UTEXT_BORDER UIColorFromRGB(0xBBBBBB)
+#define BUITY_RED UIColorFromRGB(0xBE1522)
+#define RED  UIColorFromRGB(0xD01522)
+#define BLACK  UIColorFromRGB(0x000000)
+#define BUITY_GREY  UIColorFromRGB(0x888888)
+#define DARK_GREY     UIColorFromRGB(0x555555)
+#define GREY UIColorFromRGB(0xBBBBBB)
 #define NAVIGATION_BACKGROUND UIColorFromRGB(0xF8F8F8)

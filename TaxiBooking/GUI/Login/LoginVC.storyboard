@@ -23,19 +23,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-pf-IPQ">
-                                <rect key="frame" x="51" y="103" width="273" height="30"/>
+                                <rect key="frame" x="21" y="103" width="333.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-SP-Qdh">
-                                <rect key="frame" x="51" y="153" width="273" height="30"/>
+                                <rect key="frame" x="21" y="153" width="333.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-ut-d0Y">
-                                <rect key="frame" x="253" y="209" width="71" height="28"/>
+                                <rect key="frame" x="283.5" y="209" width="71" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jWc-ut-d0Y" secondAttribute="height" multiplier="111:44" id="ifS-cV-G7H"/>
                                 </constraints>
@@ -62,7 +62,7 @@
                             <constraint firstItem="vDh-SP-Qdh" firstAttribute="width" secondItem="ZcL-pf-IPQ" secondAttribute="width" id="iJv-r9-SCV"/>
                             <constraint firstItem="vDh-SP-Qdh" firstAttribute="leading" secondItem="ZcL-pf-IPQ" secondAttribute="leading" id="vFL-4U-0FP"/>
                             <constraint firstItem="vDh-SP-Qdh" firstAttribute="top" secondItem="ZcL-pf-IPQ" secondAttribute="bottom" constant="20" id="wCk-RG-T4i"/>
-                            <constraint firstItem="ZcL-pf-IPQ" firstAttribute="width" secondItem="zgj-ql-kpz" secondAttribute="height" multiplier="273:667" id="zx9-a1-uGI"/>
+                            <constraint firstItem="ZcL-pf-IPQ" firstAttribute="width" secondItem="zgj-ql-kpz" secondAttribute="height" multiplier="3:6" id="zx9-a1-uGI"/>
                         </constraints>
                     </view>
                     <connections>

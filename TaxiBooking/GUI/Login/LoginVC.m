@@ -40,7 +40,7 @@
 - (void)customizeLoginButton {
     _logInButton.layer.cornerRadius = 8.0f;
     _logInButton.clipsToBounds = YES;
-    _logInButton.layer.borderColor = LIGHT_BACKGROUND_UTEXT_BORDER.CGColor;
+    _logInButton.layer.borderColor = GREY.CGColor;
     _logInButton.layer.borderWidth = 0.5f;
     _logInButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
 }
@@ -48,12 +48,12 @@
 - (void)customizeTextFields {
     _usernameField.layer.cornerRadius = 8.0f;
     _usernameField.clipsToBounds = YES;
-    _usernameField.layer.borderColor = LIGHT_BACKGROUND_UTEXT_BORDER.CGColor;
+    _usernameField.layer.borderColor = GREY.CGColor;
     _usernameField.layer.borderWidth = 0.5f;
     
     _passwordField.layer.cornerRadius = 8.0f;
     _passwordField.clipsToBounds = YES;
-    _passwordField.layer.borderColor = LIGHT_BACKGROUND_UTEXT_BORDER.CGColor;
+    _passwordField.layer.borderColor = GREY.CGColor;
     _passwordField.layer.borderWidth = 0.5f;
 }
 
