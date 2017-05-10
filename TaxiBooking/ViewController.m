@@ -21,6 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
+    // test example
+    
     Driver *driver = [[Driver alloc] initWithLogin:@"tia61@example.org" andPassword:@"secret"];
     [driver authorizeWithBlock:^(NSError *error) {
         if (error)
@@ -29,8 +32,7 @@
             NSLog(@"Authorized");
         
 //        [driver logout];
-        NSURL *url = [NSURL URLWithString:driver.photoURL];
-        [Utilities loadImageFromURL:url andCompletionBlock:^(UIImage *image) {
+        [Utilities loadImageFromURL:driver.photoURL andCompletionBlock:^(UIImage *image) {
             NSLog(@"photo loaded");
             NSLog(@"%@", image);
         }];

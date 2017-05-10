@@ -18,9 +18,15 @@ static NSDateFormatter *dateFormatter;
     return emailParts.count == 2 && [emailParts objectAtIndex:0].length > 2 && [emailParts objectAtIndex:1].length >= 2;
 }
 
-+ (void)loadImageFromURL:(NSURL*)imageURL andCompletionBlock:(CompletionImageBlock)completionBlock {
++ (void)loadImageFromURL:(NSString*)imageURL andCompletionBlock:(CompletionImageBlock)completionBlock {
     
-    [[[NSURLSession sharedSession] dataTaskWithURL:imageURL
+    NSURL *url = [NSURL URLWithString:imageURL];
+    
+    if (!url) {
+        completionBlock(nil);
+        return;
+    }
+    [[[NSURLSession sharedSession] dataTaskWithURL:url
                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
                                     UIImage *image;

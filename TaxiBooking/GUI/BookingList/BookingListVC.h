@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class Driver;
+
 @interface BookingListVC : UIViewController
 
 + (BookingListVC *)getFromStoryboard;
 
-- (void)setDriver:(NSObject*)profile;
-- (void)setBookings:(NSArray*)bookingList;
+- (void)setupDriver:(Driver*)profile;
 @end

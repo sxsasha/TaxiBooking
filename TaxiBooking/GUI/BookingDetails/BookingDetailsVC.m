@@ -104,11 +104,7 @@
 }
 
 - (void)customizationLoadView {
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [indicator startAnimating];
-    [_loadingView addSubview:indicator];
-    indicator.center = _loadingView.center;
-    _loadingView.backgroundColor = [GREY colorWithAlphaComponent:0.5];
+    _loadingView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)customizeNavigation {
@@ -155,6 +151,14 @@
 
 - (void)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)tapMeeting:(id)sender {
+    
+}
+
+- (IBAction)reportAction:(id)sender {
+    
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "LoginVC.h"
 #import "Constants.h"
 #import "BookingListVC.h"
+#import "Driver.h"
 
 @interface LoginVC ()
 
@@ -65,8 +66,24 @@
 #pragma mark - Actions
 
 - (IBAction)logIn:(id)sender {
-    BookingListVC *bookingList = [BookingListVC getFromStoryboard];
-    [self.navigationController pushViewController:bookingList animated:YES];
+    [self.usernameField resignFirstResponder];
+    NSString *login = self.usernameField.text;
+    NSString *pass = self.passwordField.text;
+    
+    Driver *driver = [[Driver alloc] initWithLogin:login andPassword:pass];
+    [driver authorizeWithBlock:^(NSError *error) {
+        if (error) {
+            [self showError:error.domain message:error.localizedDescription];
+            return;
+        }
+        BookingListVC *bookingList = [BookingListVC getFromStoryboard];
+        [bookingList setupDriver:driver];
+        [self.navigationController pushViewController:bookingList animated:YES];
+    }];
+}
+
+- (void)showError:(NSString *)title message:(NSString *)message {
+  //show error
 }
 
 @end

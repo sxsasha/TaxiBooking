@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class Booking;
+
 @interface BookingCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fromLabel;
-@property (weak, nonatomic) IBOutlet UILabel *toLabel;
-@property (weak, nonatomic) IBOutlet UILabel *estimateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *classLabel;
-
+- (void)configWithBooking:(Booking *)booking;
 @end

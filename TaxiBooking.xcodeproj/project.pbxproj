@@ -208,13 +208,13 @@
 			isa = PBXGroup;
 			children = (
 				975F46C71EC1CF6500F143BC /* GUI */,
+				EA75A0431EC1E40900699214 /* Models */,
 				EAF39AA01EC1C4EE003DE2D5 /* AppDelegate.h */,
 				EAF39AA11EC1C4EE003DE2D5 /* AppDelegate.m */,
 				EA75A0401EC1E33C00699214 /* Utilities.h */,
 				EA75A0411EC1E33C00699214 /* Utilities.m */,
 				EA75A03D1EC1E32C00699214 /* BookingManager.h */,
 				EA75A03E1EC1E32C00699214 /* BookingManager.m */,
-				EA75A0431EC1E40900699214 /* Models */,
 				EAF39AA31EC1C4EE003DE2D5 /* ViewController.h */,
 				EAF39AA41EC1C4EE003DE2D5 /* ViewController.m */,
 				EAF39AA61EC1C4EE003DE2D5 /* Main.storyboard */,

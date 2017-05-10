@@ -12,6 +12,8 @@
 #import "ProfileBaseView.h"
 #import "BookingCell.h"
 #import "BookingDetailsVC.h"
+#import "Driver.h"
+#import "Utilities.h"
 
 
 @interface BookingListVC () <UITableViewDelegate, UITableViewDataSource>
@@ -20,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet ProfileBaseView *profileBaseView;
 
 @property (strong, nonatomic) NSObject *driver;
-@property (strong, nonatomic) NSArray *bookings;
+@property (strong, nonatomic) NSArray <Booking *> *bookings;
 @end
 
 static NSString *cellIdentifier = @"BookingCell";
@@ -33,6 +35,32 @@ static NSString *cellIdentifier = @"BookingCell";
     BookingListVC *vc = [mainStoryboard instantiateInitialViewController];
     return vc;
 }
+
+#pragma mark - API
+
+- (void)setupDriver:(Driver*)driver {
+    _driver = driver;
+    
+    self.profileBaseView.nameLabel.text = [NSString stringWithFormat:@"%@ %@", driver.firstName, driver.lastName];
+    self.profileBaseView.emailLabel.text = driver.email;
+    
+    [Utilities loadImageFromURL:driver.photoURL andCompletionBlock:^(UIImage *image) {
+        if (image) {
+            self.profileBaseView.profileImage.image = image;
+            [self.profileBaseView layoutIfNeeded];
+        }
+    }];
+    
+    _bookings = driver.bookingList;
+    [self.bookingList reloadData];
+}
+
+- (void)setupBookings:(NSArray*)bookingList {
+    
+}
+
+
+#pragma mark - Main Overriden methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,12 +88,15 @@ static NSString *cellIdentifier = @"BookingCell";
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15; //self.bookings.count;
+    return self.bookings.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    Booking *booking = self.bookings[indexPath.row];
     BookingCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    [cell configWithBooking:booking];
+    
     return cell;
 }
 
