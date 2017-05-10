@@ -15,6 +15,7 @@
 //main views
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *dragView;
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 //buttons
@@ -31,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressToLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapHeightContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightContraint;
 @property (assign, nonatomic)  CGFloat defaultHeight;
 
 @end
@@ -59,6 +61,21 @@
     [self customizationButtons];
     [self customizationDragView];
     [self customizationMapView];
+    [self customizeNavigation];
+    [self customizationLoadView];
+    [self loadBooking];
+}
+
+#pragma mark Functionality config
+
+- (void)loadBooking {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hideLoadView];
+    });
+}
+
+- (void)hideLoadView {
+    _loadingView.hidden = YES;
 }
 
 #pragma mark Customizations
@@ -82,16 +99,28 @@
 
 - (void)customizationMapView {
     _defaultHeight = [UIScreen mainScreen].bounds.size.height / 3.f;
+    _viewHeightContraint.constant = _defaultHeight + 510;
     _mapHeightContraint.constant = _defaultHeight;
+}
+
+- (void)customizationLoadView {
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [indicator startAnimating];
+    [_loadingView addSubview:indicator];
+    indicator.center = _loadingView.center;
+    _loadingView.backgroundColor = [GREY colorWithAlphaComponent:0.5];
+}
+
+- (void)customizeNavigation {
+    self.navigationItem.title = @"Booking Details";
+    
+   UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrow_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    back.tintColor = DARK_GREY;
+    self.navigationItem.leftBarButtonItem = back;
 }
 
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
-                     withVelocity:(CGPoint)velocity
-              targetContentOffset:(inout CGPoint *)targetContentOffset {
-   // NSLog(@"targetContentOffset: %@", NSStringFromCGPoint(velocity));
-}
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
@@ -100,28 +129,16 @@
     
     //do constraint
     if (_mapHeightContraint.constant == _defaultHeight) {
-        if (scrollView.contentOffset.y < -50) {
+        if (scrollView.contentOffset.y < -60) {
             _mapHeightContraint.constant = _defaultHeight * 2;
         }
     }
     else if (_mapHeightContraint.constant == _defaultHeight * 2) {
-        if (scrollView.contentOffset.y > 100) {
+        if (scrollView.contentOffset.y > 60) {
             _mapHeightContraint.constant = _defaultHeight;
         }
     }
     
-//    else if (scrollView.contentOffset.y > 100) {
-//        _mapHeightContraint.constant = _mapHeightContraint.constant / 2;
-//    }
-//    
-//    if (scrollView.contentOffset.y < -50) {
-//        _mapHeightContraint.constant = _mapHeightContraint.constant * 2;
-//    }
-//    
-//    if (scrollView.contentOffset.y > 200) {
-//        _mapHeightContraint.constant = _mapHeightContraint.constant / 2;
-//    }
-//    
     //animate
     [UIView animateWithDuration:0.25f animations:^{
         [self.view layoutIfNeeded];
@@ -133,5 +150,11 @@
 }
 
 #pragma mark - GMSMapViewDelegate
+
+#pragma mark - Actions
+
+- (void)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

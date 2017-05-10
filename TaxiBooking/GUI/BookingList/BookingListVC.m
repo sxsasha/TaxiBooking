@@ -78,7 +78,7 @@ static NSString *cellIdentifier = @"BookingCell";
 #pragma mark - Actions
 
 - (IBAction)logoutAction:(id)sender {
-    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
