@@ -11,7 +11,7 @@
 #import "BookingListVC.h"
 #import "Driver.h"
 
-@interface LoginVC ()
+@interface LoginVC () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
@@ -58,25 +58,39 @@
 - (void)customizeLoginButton {
     _logInButton.layer.cornerRadius = 8.0f;
     _logInButton.clipsToBounds = YES;
-    _logInButton.layer.borderColor = GREY.CGColor;
-    _logInButton.layer.borderWidth = 0.5f;
+    _logInButton.layer.borderColor = DARK_GREY.CGColor;
+    _logInButton.layer.borderWidth = 0.4f;
     _logInButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)customizeTextFields {
     _usernameField.layer.cornerRadius = 8.0f;
     _usernameField.clipsToBounds = YES;
-    _usernameField.layer.borderColor = GREY.CGColor;
-    _usernameField.layer.borderWidth = 0.5f;
+    _usernameField.layer.borderColor = DARK_GREY.CGColor;
+    _usernameField.layer.borderWidth = 0.4f;
     
     _passwordField.layer.cornerRadius = 8.0f;
     _passwordField.clipsToBounds = YES;
-    _passwordField.layer.borderColor = GREY.CGColor;
-    _passwordField.layer.borderWidth = 0.5f;
+    _passwordField.layer.borderColor = DARK_GREY.CGColor;
+    _passwordField.layer.borderWidth = 0.4f;
+    
+    _usernameField.delegate = self;
+    _passwordField.delegate = self;
 }
 
 - (void)customizeNavigation {
     self.navigationItem.title = @"Driver LogIn";
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.usernameField]) {
+        [self.usernameField becomeFirstResponder];
+    }
+    else if ([textField isEqual:self.passwordField]) {
+        [self.usernameField resignFirstResponder];
+        [self logIn:nil];
+    }
+    return YES;
 }
 
 
@@ -84,6 +98,7 @@
 
 - (IBAction)logIn:(id)sender {
     [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
     [self showLoadView];
     NSString *login = self.usernameField.text;
     NSString *pass = self.passwordField.text;

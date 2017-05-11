@@ -15,7 +15,7 @@
 #import "PlacePoint.h"
 @import GoogleMaps;
 
-@interface BookingDetailsVC () <UIScrollViewDelegate, GMSMapViewDelegate>
+@interface BookingDetailsVC () <UIScrollViewDelegate, GMSMapViewDelegate, CLLocationManagerDelegate>
 
 //main views
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
@@ -53,6 +53,8 @@
 @property (assign, nonatomic) CGFloat defaultHeight;
 
 @property (strong, nonatomic) Booking *booking;
+@property (strong, nonatomic) CLLocationManager *locManager;
+@property (strong, nonatomic) CLLocation* location;
 
 @end
 
@@ -82,8 +84,9 @@
         }
         else {
             _booking = booking;
-            [self configAllLabels:booking];
             [self hideLoadView];
+            [self configAllLabels:booking];
+            [self configMap:booking];
         }
     }];
 }
@@ -99,13 +102,30 @@
     [self customizationMapView];
     [self customizeNavigation];
     [self customizationLoadView];
-    [self loadBooking];
+    [self initLocationManager];
+}
+
+-(void) initLocationManager {
+    self.locManager = [[CLLocationManager alloc]init];
+    self.locManager.delegate = self;
+    self.locManager.distanceFilter = 10;
+    self.locManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    [self.locManager requestWhenInUseAuthorization];
 }
 
 #pragma mark - Config after loading
 
 - (void)configMap:(Booking *)booking {
+    GMSMarker *pickupMarker = [GMSMarker markerWithPosition:booking.pickupPoint.location];
+    GMSMarker *dropMarker = [GMSMarker markerWithPosition:booking.dropoffPoint.location];
     
+    pickupMarker.map = self.mapView;
+    dropMarker.map = self.mapView;
+    
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:booking.pickupPoint.location coordinate:booking.dropoffPoint.location];
+    UIEdgeInsets insets = UIEdgeInsetsMake(30, 30, 30, 30);
+    GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bounds withEdgeInsets:insets];
+    [self.mapView animateWithCameraUpdate:update];
 }
 
 - (void)configAllLabels:(Booking *)booking {
@@ -148,12 +168,6 @@
 
 #pragma mark Functionality config
 
-- (void)loadBooking {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self hideLoadView];
-    });
-}
-
 - (void)hideLoadView {
     _loadingView.hidden = YES;
 }
@@ -193,6 +207,37 @@
    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrow_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
     back.tintColor = DARK_GREY;
     self.navigationItem.leftBarButtonItem = back;
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if  ((status == kCLAuthorizationStatusAuthorizedWhenInUse) ||
+         (status == kCLAuthorizationStatusAuthorizedAlways))
+    {
+        [self.locManager startUpdatingLocation];
+        self.mapView.myLocationEnabled = YES;
+        self.mapView.settings.myLocationButton = YES;
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    
+    CLLocation *location = [locations lastObject];
+    self.location = location;
+    
+    NSTimeInterval locationAge = -[location.timestamp timeIntervalSinceNow];
+    if (locationAge > 5.0) return;
+    
+    if (location.horizontalAccuracy < 0) return;
+    
+    [self changeLocation:location];
+}
+
+- (void)changeLocation:(CLLocation *)location {
+    
 }
 
 #pragma mark - UIScrollViewDelegate
