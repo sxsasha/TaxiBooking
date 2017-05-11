@@ -46,8 +46,7 @@ static NSString *cellIdentifier = @"BookingCell";
     
     [Utilities loadImageFromURL:driver.photoURL andCompletionBlock:^(UIImage *image) {
         if (image) {
-            self.profileBaseView.profileImage.image = image;
-            [self.profileBaseView layoutIfNeeded];
+            [self setupProfileImage:image];
         }
     }];
     
@@ -55,18 +54,12 @@ static NSString *cellIdentifier = @"BookingCell";
     [self.bookingList reloadData];
 }
 
-- (void)setupBookings:(NSArray*)bookingList {
-    
-}
-
-
 #pragma mark - Main Overriden methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configTableView];
     [self customizeNavigation];
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - Initialization
@@ -83,6 +76,25 @@ static NSString *cellIdentifier = @"BookingCell";
     
     logout.tintColor = DARK_GREY;
     self.navigationItem.leftBarButtonItem = logout;
+}
+
+- (void)setupProfileImage:(UIImage *)image {
+    
+    UIImageView *imageView = self.profileBaseView.profileImage;
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:imageView.bounds.size.height / 2.f] addClip];
+    // Draw your image
+    [image drawInRect:imageView.bounds];
+    
+    // Get the image, here setting the UIImageView image
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // Lets forget about that we were drawing
+    UIGraphicsEndImageContext();
+    
+    [self.profileBaseView layoutIfNeeded];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -102,13 +114,43 @@ static NSString *cellIdentifier = @"BookingCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Booking *booking = self.bookings[indexPath.row];
     BookingDetailsVC *detailsVC = [BookingDetailsVC getFromStoryboard];
+    [detailsVC setupBooking:booking];
+    
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
 
-#pragma mark - Actions
+#pragma mark - Logout
 
 - (IBAction)logoutAction:(id)sender {
+    [self showLogoutQuestion];
+}
+
+- (void)showLogoutQuestion {
+    UIAlertController* controller = [UIAlertController alertControllerWithTitle:@"Logout" message:@"Are you sure?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle: @"YES"
+                                                          style: UIAlertActionStyleDestructive
+                                                        handler: ^(UIAlertAction *action) {
+                                                            [self logoutUser];
+                                                        }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleCancel handler:nil];
+    
+    [controller addAction: alertAction];
+    [controller addAction: cancelAction];
+    [self presentViewController: controller animated: YES completion:^{
+        [controller.view.superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOutside)]];
+    }];
+}
+
+- (void)tapOutside {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)logoutUser {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

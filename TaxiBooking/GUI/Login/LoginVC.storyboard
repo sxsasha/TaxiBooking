@@ -34,16 +34,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-ut-d0Y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-ut-d0Y">
                                 <rect key="frame" x="283.5" y="209" width="71" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jWc-ut-d0Y" secondAttribute="height" multiplier="111:44" id="ifS-cV-G7H"/>
                                 </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Log In">
                                             <attributes>
                                                 <font key="NSFont" size="14" name=".SFNSText"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -52,12 +54,30 @@
                                     <action selector="logIn:" destination="UCD-Oi-htQ" eventType="touchUpInside" id="nBo-pm-yfu"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bco-gY-v2W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-LD-72M">
+                                        <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                        <color key="color" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="3Fg-LD-72M" firstAttribute="centerX" secondItem="Bco-gY-v2W" secondAttribute="centerX" id="Ohj-At-QLj"/>
+                                    <constraint firstItem="3Fg-LD-72M" firstAttribute="centerY" secondItem="Bco-gY-v2W" secondAttribute="centerY" id="pW3-vu-Ejx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94184255599975586" green="0.94253033399581909" blue="0.94878667593002319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Bco-gY-v2W" secondAttribute="trailing" id="Cad-La-tyS"/>
                             <constraint firstItem="ZcL-pf-IPQ" firstAttribute="top" secondItem="ZSR-EH-wR3" secondAttribute="bottom" constant="83" id="Pzu-cB-lrM"/>
+                            <constraint firstItem="4I7-Zh-Aci" firstAttribute="top" secondItem="Bco-gY-v2W" secondAttribute="bottom" id="SeO-8q-Ezu"/>
                             <constraint firstItem="ZcL-pf-IPQ" firstAttribute="centerX" secondItem="zgj-ql-kpz" secondAttribute="centerX" id="aUK-mh-7up"/>
+                            <constraint firstItem="Bco-gY-v2W" firstAttribute="top" secondItem="zgj-ql-kpz" secondAttribute="top" id="cTu-cx-5Hy"/>
                             <constraint firstItem="jWc-ut-d0Y" firstAttribute="top" secondItem="vDh-SP-Qdh" secondAttribute="bottom" constant="26" id="e6f-Le-cH7"/>
+                            <constraint firstItem="Bco-gY-v2W" firstAttribute="leading" secondItem="zgj-ql-kpz" secondAttribute="leading" id="gfL-7y-9vt"/>
                             <constraint firstItem="jWc-ut-d0Y" firstAttribute="trailing" secondItem="vDh-SP-Qdh" secondAttribute="trailing" id="gr7-ne-Eub"/>
                             <constraint firstItem="vDh-SP-Qdh" firstAttribute="width" secondItem="ZcL-pf-IPQ" secondAttribute="width" id="iJv-r9-SCV"/>
                             <constraint firstItem="vDh-SP-Qdh" firstAttribute="leading" secondItem="ZcL-pf-IPQ" secondAttribute="leading" id="vFL-4U-0FP"/>
@@ -66,6 +86,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="Bco-gY-v2W" id="KNy-Yg-fR6"/>
                         <outlet property="logInButton" destination="jWc-ut-d0Y" id="gMA-5F-yIS"/>
                         <outlet property="passwordField" destination="vDh-SP-Qdh" id="hp2-gd-MSG"/>
                         <outlet property="usernameField" destination="ZcL-pf-IPQ" id="OPh-NJ-n9g"/>

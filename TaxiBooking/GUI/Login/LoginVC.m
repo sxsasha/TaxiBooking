@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *logInButton;
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
 
 @end
 
@@ -33,7 +34,23 @@
     [self customizeLoginButton];
     [self customizeTextFields];
     [self customizeNavigation];
+    [self customizationLoadView];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - Loading
+
+- (void)showLoadView {
+    _loadingView.hidden = NO;
+}
+
+- (void)hideLoadView {
+    _loadingView.hidden = YES;
+}
+
+- (void)customizationLoadView {
+    _loadingView.hidden = YES;
+    _loadingView.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - Initializations
@@ -67,11 +84,12 @@
 
 - (IBAction)logIn:(id)sender {
     [self.usernameField resignFirstResponder];
+    [self showLoadView];
     NSString *login = self.usernameField.text;
     NSString *pass = self.passwordField.text;
-    
     Driver *driver = [[Driver alloc] initWithLogin:login andPassword:pass];
     [driver authorizeWithBlock:^(NSError *error) {
+        [self hideLoadView];
         if (error) {
             [self showError:error.domain message:error.localizedDescription];
             return;
@@ -83,7 +101,16 @@
 }
 
 - (void)showError:(NSString *)title message:(NSString *)message {
-  //show error
+    UIAlertController* controller = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle: @"Ok"
+                                                          style: UIAlertActionStyleDestructive
+                                                        handler: ^(UIAlertAction *action) {
+                                                            
+                                                        }];
+    [controller addAction: alertAction];
+    
+    [self presentViewController: controller animated: YES completion: nil];
 }
 
 @end

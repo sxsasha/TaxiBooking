@@ -8,6 +8,11 @@
 
 #import "BookingDetailsVC.h"
 #import "Constants.h"
+#import "Utilities.h"
+
+#import "Booking.h"
+#import "Customer.h"
+#import "PlacePoint.h"
 @import GoogleMaps;
 
 @interface BookingDetailsVC () <UIScrollViewDelegate, GMSMapViewDelegate>
@@ -25,15 +30,29 @@
 @property (weak, nonatomic) IBOutlet UIButton *chatButton;
 
 //all labels
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fromDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressFrom;
 @property (weak, nonatomic) IBOutlet UILabel *toLabelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressToLabel;
+@property (weak, nonatomic) IBOutlet UILabel *estimateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *notesLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *customerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countPeoplesLabel;
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapHeightContraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightContraint;
-@property (assign, nonatomic)  CGFloat defaultHeight;
+@property (assign, nonatomic) CGFloat defaultHeight;
+
+@property (strong, nonatomic) Booking *booking;
 
 @end
 
@@ -47,9 +66,26 @@
     return vc;
 }
 
+#pragma mark - Main override methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configAll];
+}
+
+#pragma mark - API
+
+- (void)setupBooking:(Booking *)booking {
+    [booking loadingFullInfoWithBlock:^(NSError *error) {
+        if (error) {
+            [self showError:error.domain message:error.localizedDescription];
+        }
+        else {
+            _booking = booking;
+            [self configAllLabels:booking];
+            [self hideLoadView];
+        }
+    }];
 }
 
 #pragma mark - Configuration
@@ -64,6 +100,50 @@
     [self customizeNavigation];
     [self customizationLoadView];
     [self loadBooking];
+}
+
+#pragma mark - Config after loading
+
+- (void)configMap:(Booking *)booking {
+    
+}
+
+- (void)configAllLabels:(Booking *)booking {
+    
+    self.dateLabel.text = [Utilities getCustomizedDate:booking.pickupDateTime];
+    self.nameLabel.text = booking.customer.fullName;
+    self.flightLabel.text = [NSString stringWithFormat:@"Flight: %@", booking.flightInfo.uppercaseString];
+    
+    self.fromLabel.attributedText = [self boldFromString:@"From: " name:booking.pickupPoint.name type:booking.pickupPoint.type];
+    self.fromDescriptionLabel.text = booking.pickupPoint.pointDescription;
+    self.addressFrom.text = [self addressFrom:booking.pickupPoint];
+    
+    self.toLabelLabel.attributedText = [self boldFromString:@"To: " name:booking.dropoffPoint.name type:booking.dropoffPoint.type];
+    self.toDescriptionLabel.text = booking.dropoffPoint.pointDescription;
+    self.addressToLabel.text = [self addressFrom:booking.dropoffPoint];
+    
+    Float32 minutes = ((float)booking.durationInSeconds / 60.f);
+    self.estimateLabel.text = [NSString stringWithFormat:@"Est. booking duration: (0 minutes - if applicable) %2.f minutes", minutes];
+    self.categoryLabel.text = [NSString stringWithFormat:@"Category: %@", booking.category];
+    self.notesLabel.text = [NSString stringWithFormat:@"Notes: %@", booking.notes];
+
+    self.customerNameLabel.text = booking.customer.fullName;
+    self.phoneLabel.text = booking.customer.phoneNumber;
+    self.countPeoplesLabel.text = [NSString stringWithFormat:@"Adults: %lu Children: %lu", (unsigned long)booking.adultPax, (unsigned long)booking.childrenPax];
+}
+
+- (NSAttributedString *)boldFromString:(NSString *)string name:(NSString *)name type:(NSString *)type  {
+    NSMutableAttributedString *mutableAttribString = [[NSMutableAttributedString alloc] initWithString:string];
+    
+    NSString *nameString = [NSString stringWithFormat:@"%@ %@", name, type];
+    UIFont *boldFont = [UIFont boldSystemFontOfSize:13.f];
+    NSAttributedString *nameAttribString = [[NSAttributedString alloc] initWithString:nameString attributes:@{NSFontAttributeName:boldFont}];
+    [mutableAttribString appendAttributedString:nameAttribString];
+    return mutableAttribString;
+}
+
+- (NSString *)addressFrom:(PlacePoint *)place {
+    return [NSString stringWithFormat:@"%@, %@, %@, %@",place.addressStreet1, place.addressStreet2, place.addressCity, place.addressCountryCode];
 }
 
 #pragma mark Functionality config
@@ -117,7 +197,6 @@
 
 #pragma mark - UIScrollViewDelegate
 
-
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
     //update view
@@ -141,11 +220,11 @@
     } completion:^(BOOL finished) {
         //compate
     }];
-
-    NSLog(@"targetContentOffset: %@", NSStringFromCGPoint(scrollView.contentOffset));
 }
 
 #pragma mark - GMSMapViewDelegate
+
+
 
 #pragma mark - Actions
 
@@ -159,6 +238,29 @@
 
 - (IBAction)reportAction:(id)sender {
     
+}
+
+- (IBAction)phoneAction:(id)sender {
+    
+}
+
+- (IBAction)messageAction:(id)sender {
+    
+}
+
+#pragma mark - Show Error
+
+- (void)showError:(NSString *)title message:(NSString *)message {
+    UIAlertController* controller = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle: @"Ok"
+                                                          style: UIAlertActionStyleDestructive
+                                                        handler: ^(UIAlertAction *action) {
+                                                            
+                                                        }];
+    [controller addAction: alertAction];
+    
+    [self presentViewController: controller animated: YES completion: nil];
 }
 
 @end

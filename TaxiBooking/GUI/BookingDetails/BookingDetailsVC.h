@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Booking;
+
 @interface BookingDetailsVC : UIViewController
 
 + (BookingDetailsVC *)getFromStoryboard;
+- (void)setupBooking:(Booking *)booking;
 @end

@@ -37,14 +37,16 @@
             NSLog(@"%@", image);
         }];
         
-        Booking *booking = [driver.bookingList firstObject];
-        [booking loadingFullInfoWithBlock:^(NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", error.localizedDescription);
-            } else {
-                NSLog(@"Full info loaded, notes: %@", booking.notes);
-            }
-        }];
+        //Booking *booking = [driver.bookingList firstObject];
+        for (Booking *booking in driver.bookingList) {
+            [booking loadingFullInfoWithBlock:^(NSError *error) {
+                if (error) {
+                    NSLog(@"Error: %@", error.localizedDescription);
+                } else {
+                    NSLog(@"Full info loaded, notes: %@", booking.notes);
+                }
+            }];
+        }
     }];
     
     

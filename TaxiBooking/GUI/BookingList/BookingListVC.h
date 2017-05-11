@@ -14,6 +14,5 @@
 @interface BookingListVC : UIViewController
 
 + (BookingListVC *)getFromStoryboard;
-
 - (void)setupDriver:(Driver*)profile;
 @end

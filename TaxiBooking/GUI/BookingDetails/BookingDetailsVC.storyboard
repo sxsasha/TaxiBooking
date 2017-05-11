@@ -30,149 +30,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="557"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-5H-Jed" customClass="GMSMapView">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.79573567710000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="ekE-Kg-ArV"/>
+                                                    <constraint firstAttribute="height" constant="10" id="ekE-Kg-ArV"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHm-1c-9UO">
-                                                <rect key="frame" x="0.0" y="100" width="320" height="510"/>
+                                                <rect key="frame" x="0.0" y="10" width="320" height="510"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed 16 may 02:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-mj-saT">
-                                                        <rect key="frame" x="18" y="11" width="141" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs Anna Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-M2-CQv">
-                                                        <rect key="frame" x="13" y="41" width="100" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight: AB1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="oJI-P3-vRi">
-                                                        <rect key="frame" x="13" y="65" width="89" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From: Rockefeller Center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lTJ-SC-SYV">
-                                                        <rect key="frame" x="13" y="89" width="151" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exit 3 next to Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-JJ-6jY">
-                                                        <rect key="frame" x="13" y="113" width="144" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="687 Adeline Valley Suite 322 Carmela Alley, US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-ol-jf2">
-                                                        <rect key="frame" x="13" y="137" width="284" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To: Empire State Building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-1i-LMk">
-                                                        <rect key="frame" x="13" y="161" width="152" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exit 2 next to Subway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="A0P-KN-ZT1">
-                                                        <rect key="frame" x="13" y="185" width="130" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2467 Johnston Glens, Linda Wells, Empire State Building, 11111, New York, US" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7kA-IO-Tt1">
-                                                        <rect key="frame" x="13" y="209" width="294" height="31.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Est. booking duration: (0 hours - if applicable) 47 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="6f1-do-mAA">
-                                                        <rect key="frame" x="13" y="248.5" width="307" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Luxury" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="JRY-dV-XnF">
-                                                        <rect key="frame" x="13" y="272.5" width="104" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes: Please make sure it is a non-smoking car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lel-Hr-V3u">
-                                                        <rect key="frame" x="13" y="296.5" width="291" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER DETAILS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mt3-Kl-r0x">
-                                                        <rect key="frame" x="13" y="342.5" width="141" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+471234567894" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="UXs-CO-S3R">
-                                                        <rect key="frame" x="13" y="391.5" width="110" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs Anna Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-hv-Imn">
-                                                        <rect key="frame" x="13" y="367.5" width="100" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adults: 2 Children: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-F3-Maj">
-                                                        <rect key="frame" x="13" y="416.5" width="132" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-k9-MfE">
-                                                        <rect key="frame" x="16" y="477" width="288" height="29"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                        <state key="normal" title="Report a problem">
-                                                            <color key="titleColor" red="0.74552136659622192" green="0.082145191729068756" blue="0.13294443488121033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBg-QR-azp">
-                                                        <rect key="frame" x="205" y="342.5" width="37" height="37"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="hBg-QR-azp" secondAttribute="height" multiplier="1:1" id="NsE-ft-ulC"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="phone_icon"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-YU-dB9">
-                                                        <rect key="frame" x="262" y="342.5" width="37" height="37"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="2dC-YU-dB9" secondAttribute="height" multiplier="1:1" id="ahQ-FE-0FQ"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="chat_icon"/>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvX-ho-Mmu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="3"/>
-                                                        <color key="backgroundColor" red="0.86588054895401001" green="0.86654013395309448" blue="0.86598271131515503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="3" id="ya4-9t-5jA"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWm-FG-GsG">
-                                                        <rect key="frame" x="159" y="15" width="153" height="42.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="OWm-FG-GsG" secondAttribute="height" multiplier="18:5" id="EEw-ur-AfG"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                                        <state key="normal" title="Tap when at meeting point">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHq-JB-OqH">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
                                                         <subviews>
@@ -188,6 +54,152 @@
                                                             <constraint firstItem="e4a-v4-yvd" firstAttribute="top" secondItem="VHq-JB-OqH" secondAttribute="top" constant="9" id="XC7-DQ-JaV"/>
                                                         </constraints>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed 16 may 02:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-mj-saT">
+                                                        <rect key="frame" x="18" y="11" width="154" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs Anna Smith" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-M2-CQv">
+                                                        <rect key="frame" x="13" y="41" width="100" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight: AB1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="oJI-P3-vRi">
+                                                        <rect key="frame" x="13" y="65" width="89" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From: Rockefeller Center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lTJ-SC-SYV">
+                                                        <rect key="frame" x="13" y="89" width="151" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exit 3 next to Starbucks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-JJ-6jY">
+                                                        <rect key="frame" x="13" y="113" width="144" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="687 Adeline Valley Suite 322 Carmela Alley, US" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-ol-jf2">
+                                                        <rect key="frame" x="13" y="137" width="284" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To: Empire State Building" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-1i-LMk">
+                                                        <rect key="frame" x="13" y="161" width="152" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exit 2 next to Subway" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="A0P-KN-ZT1">
+                                                        <rect key="frame" x="13" y="185" width="130" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2467 Johnston Glens, Linda Wells, Empire State Building, 11111, New York, US" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7kA-IO-Tt1">
+                                                        <rect key="frame" x="13" y="209" width="294" height="31.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Est. booking duration: (0 hours - if applicable) 47 minutes" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="6f1-do-mAA">
+                                                        <rect key="frame" x="13" y="248.5" width="300.5" height="31.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Luxury" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="JRY-dV-XnF">
+                                                        <rect key="frame" x="13" y="288" width="104" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes: Please make sure it is a non-smoking car" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lel-Hr-V3u">
+                                                        <rect key="frame" x="13" y="312" width="291" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER DETAILS:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mt3-Kl-r0x">
+                                                        <rect key="frame" x="13" y="358" width="141" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+471234567894" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="UXs-CO-S3R">
+                                                        <rect key="frame" x="13" y="407" width="110" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs Anna Smith" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-hv-Imn">
+                                                        <rect key="frame" x="13" y="383" width="100" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adults: 2 Children: 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-F3-Maj">
+                                                        <rect key="frame" x="13" y="432" width="132" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-k9-MfE">
+                                                        <rect key="frame" x="16.5" y="477" width="288" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                        <state key="normal" title="Report a problem">
+                                                            <color key="titleColor" red="0.74552136659622192" green="0.082145191729068756" blue="0.13294443488121033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="reportAction:" destination="wFX-ly-ROQ" eventType="touchUpInside" id="eX6-HF-YGa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBg-QR-azp">
+                                                        <rect key="frame" x="205" y="358" width="37" height="37"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="hBg-QR-azp" secondAttribute="height" multiplier="1:1" id="NsE-ft-ulC"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="phone_icon"/>
+                                                        <connections>
+                                                            <action selector="phoneAction:" destination="wFX-ly-ROQ" eventType="touchUpInside" id="eLZ-TD-CGx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-YU-dB9">
+                                                        <rect key="frame" x="262" y="358" width="37" height="37"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="2dC-YU-dB9" secondAttribute="height" multiplier="1:1" id="ahQ-FE-0FQ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="chat_icon"/>
+                                                        <connections>
+                                                            <action selector="messageAction:" destination="wFX-ly-ROQ" eventType="touchUpInside" id="trm-Wq-OMR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvX-ho-Mmu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="3"/>
+                                                        <color key="backgroundColor" red="0.86588054895401001" green="0.86654013395309448" blue="0.86598271131515503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="3" id="ya4-9t-5jA"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWm-FG-GsG">
+                                                        <rect key="frame" x="172" y="15" width="144" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="OWm-FG-GsG" secondAttribute="height" multiplier="18:5" id="EEw-ur-AfG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                        <state key="normal" title="Tap when at meeting point">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapMeeting:" destination="wFX-ly-ROQ" eventType="touchUpInside" id="Jko-6U-add"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -196,7 +208,7 @@
                                                     <constraint firstItem="JRY-dV-XnF" firstAttribute="leading" secondItem="6f1-do-mAA" secondAttribute="leading" id="6gf-1f-i99"/>
                                                     <constraint firstItem="7kA-IO-Tt1" firstAttribute="top" secondItem="A0P-KN-ZT1" secondAttribute="bottom" constant="8" id="7sw-3t-KMR"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JRY-dV-XnF" secondAttribute="trailing" id="7wS-j6-cPE"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OWm-FG-GsG" secondAttribute="trailing" constant="8" id="8cJ-fQ-Rga"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OWm-FG-GsG" secondAttribute="trailing" constant="4" id="8cJ-fQ-Rga"/>
                                                     <constraint firstItem="A0P-KN-ZT1" firstAttribute="leading" secondItem="eRm-1i-LMk" secondAttribute="leading" id="9k8-np-eEr"/>
                                                     <constraint firstItem="eXk-JJ-6jY" firstAttribute="leading" secondItem="lTJ-SC-SYV" secondAttribute="leading" id="B4F-6P-PwE"/>
                                                     <constraint firstItem="2cU-ol-jf2" firstAttribute="leading" secondItem="eXk-JJ-6jY" secondAttribute="leading" id="BIw-Vo-zZQ"/>
@@ -254,7 +266,7 @@
                                                     <constraint firstItem="JRY-dV-XnF" firstAttribute="top" secondItem="6f1-do-mAA" secondAttribute="bottom" constant="8" id="sVE-f7-ZQt"/>
                                                     <constraint firstItem="Hie-F3-Maj" firstAttribute="leading" secondItem="UXs-CO-S3R" secondAttribute="leading" id="sqv-5D-2cp"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oJI-P3-vRi" secondAttribute="trailing" id="tsz-ce-d9j"/>
-                                                    <constraint firstItem="OWm-FG-GsG" firstAttribute="width" secondItem="aHm-1c-9UO" secondAttribute="width" multiplier="0.48" id="xFW-sU-8oC"/>
+                                                    <constraint firstItem="OWm-FG-GsG" firstAttribute="width" secondItem="aHm-1c-9UO" secondAttribute="width" multiplier="0.45" id="xFW-sU-8oC"/>
                                                     <constraint firstItem="Hie-F3-Maj" firstAttribute="top" secondItem="UXs-CO-S3R" secondAttribute="bottom" constant="8" id="xru-45-cuI"/>
                                                     <constraint firstItem="hBg-QR-azp" firstAttribute="leading" secondItem="mt3-Kl-r0x" secondAttribute="trailing" constant="50.5" id="z4b-3b-Euh"/>
                                                     <constraint firstItem="2cU-ol-jf2" firstAttribute="top" secondItem="eXk-JJ-6jY" secondAttribute="bottom" constant="8" id="z87-Xi-PKV"/>
@@ -294,17 +306,27 @@
                     <connections>
                         <outlet property="addressFrom" destination="2cU-ol-jf2" id="dt8-s5-Dt4"/>
                         <outlet property="addressToLabel" destination="7kA-IO-Tt1" id="M4O-Mq-qc6"/>
+                        <outlet property="categoryLabel" destination="JRY-dV-XnF" id="uIL-3C-vZb"/>
                         <outlet property="chatButton" destination="2dC-YU-dB9" id="dXb-mb-7RU"/>
+                        <outlet property="countPeoplesLabel" destination="Hie-F3-Maj" id="p6J-Wp-ePD"/>
+                        <outlet property="customerNameLabel" destination="mcw-hv-Imn" id="zkF-q7-84P"/>
+                        <outlet property="dateLabel" destination="SMr-mj-saT" id="ErY-QG-eKk"/>
                         <outlet property="dragView" destination="zvX-ho-Mmu" id="zpf-CD-duv"/>
+                        <outlet property="estimateLabel" destination="6f1-do-mAA" id="Nog-y3-ZXr"/>
+                        <outlet property="flightLabel" destination="oJI-P3-vRi" id="iuy-mi-1ug"/>
+                        <outlet property="fromDescriptionLabel" destination="eXk-JJ-6jY" id="HIK-jE-3uw"/>
                         <outlet property="fromLabel" destination="lTJ-SC-SYV" id="c6T-Gq-VhE"/>
                         <outlet property="loadingView" destination="VHq-JB-OqH" id="eZ9-Cq-cNk"/>
                         <outlet property="mapHeightContraint" destination="ekE-Kg-ArV" id="MDh-jb-EtR"/>
                         <outlet property="mapView" destination="7kb-5H-Jed" id="Cnt-HJ-KBU"/>
                         <outlet property="meetingButton" destination="OWm-FG-GsG" id="10M-Qf-vdG"/>
-                        <outlet property="nameLabel" destination="mcw-hv-Imn" id="kuv-i6-6k1"/>
+                        <outlet property="nameLabel" destination="vuK-M2-CQv" id="iCu-c5-iWq"/>
+                        <outlet property="notesLabel" destination="lel-Hr-V3u" id="tuB-TZ-BJ2"/>
                         <outlet property="phoneButton" destination="hBg-QR-azp" id="VhA-xT-1iv"/>
+                        <outlet property="phoneLabel" destination="UXs-CO-S3R" id="4lF-4w-9ef"/>
                         <outlet property="reportButton" destination="wCY-k9-MfE" id="7GN-WM-sbc"/>
                         <outlet property="scrollView" destination="X28-yI-9y2" id="C2H-23-shh"/>
+                        <outlet property="toDescriptionLabel" destination="A0P-KN-ZT1" id="SXo-a1-eOq"/>
                         <outlet property="toLabelLabel" destination="eRm-1i-LMk" id="lcx-fn-MfS"/>
                         <outlet property="viewHeightContraint" destination="PM5-2k-nyu" id="9j7-1J-mzj"/>
                     </connections>

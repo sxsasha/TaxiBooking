@@ -17,4 +17,6 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+
+- (NSString *)fullName;
 @end

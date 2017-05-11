@@ -67,9 +67,9 @@ static BookingManager* instance;
             
                 driver.bookingList = [bookingList copy];
             } else
-                error = [NSError errorWithDomain:@"backseatz.com" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Error with login. Check login and password."}];
+                error = [NSError errorWithDomain:@"Unknown Users" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Error with login. Check login and password."}];
         } else
-            error = [NSError errorWithDomain:@"backseatz.com" code:400 userInfo:@{NSLocalizedDescriptionKey:@"Check your Internet connection."}];
+            error = [NSError errorWithDomain:@"No Internet Connection" code:400 userInfo:@{NSLocalizedDescriptionKey:@"Check your Internet connection."}];
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -106,7 +106,7 @@ static BookingManager* instance;
 
 - (void)bookingLoading:(Booking*)booking {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://backseatz.com/api/driverapp/booking-details"]];
-    NSString *postDataString = [NSString stringWithFormat:@"driverId=%li&bookingId=%li&api_token=%@", booking.driverID, booking.bookingID, apiToken];
+    NSString *postDataString = [NSString stringWithFormat:@"driverId=%li&bookingId=%li&api_token=%@", (long)booking.driverID, (long)booking.bookingID, apiToken];
     
     request.HTTPBody = [postDataString dataUsingEncoding:NSUTF8StringEncoding];;
     request.HTTPMethod = @"POST";
@@ -132,10 +132,10 @@ static BookingManager* instance;
                 
             } else {
                 NSString *errorMessage = [[answer objectForKey:@"response"] objectForKey:@"message"];
-                error = [NSError errorWithDomain:@"backseatz.com" code:0 userInfo:@{NSLocalizedDescriptionKey:errorMessage}];
+                error = [NSError errorWithDomain:@"Loading Wrong" code:0 userInfo:@{NSLocalizedDescriptionKey:errorMessage}];
             }
         } else
-            error = [NSError errorWithDomain:@"backseatz.com" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Check your Internet connection."}];
+            error = [NSError errorWithDomain:@"No Internet Connection" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Check your Internet connection."}];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [booking putAdditionData:dictionary withError:error];
@@ -145,17 +145,4 @@ static BookingManager* instance;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
