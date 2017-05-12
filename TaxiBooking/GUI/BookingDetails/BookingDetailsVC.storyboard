@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFX-ly-ROQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFX-ly-ROQ">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,21 +39,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHm-1c-9UO">
                                                 <rect key="frame" x="0.0" y="10" width="320" height="510"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHq-JB-OqH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
-                                                        <subviews>
-                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-v4-yvd">
-                                                                <rect key="frame" x="142" y="9" width="37" height="37"/>
-                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                                                <color key="color" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </activityIndicatorView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.35905393835616439" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstItem="e4a-v4-yvd" firstAttribute="centerX" secondItem="VHq-JB-OqH" secondAttribute="centerX" id="4cC-lq-pPT"/>
-                                                            <constraint firstItem="e4a-v4-yvd" firstAttribute="top" secondItem="VHq-JB-OqH" secondAttribute="top" constant="9" id="XC7-DQ-JaV"/>
-                                                        </constraints>
-                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed 16 may 02:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-mj-saT">
                                                         <rect key="frame" x="18" y="11" width="154.5" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -200,6 +185,21 @@
                                                             <action selector="tapMeeting:" destination="wFX-ly-ROQ" eventType="touchUpInside" id="Jko-6U-add"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHq-JB-OqH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                                        <subviews>
+                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-v4-yvd">
+                                                                <rect key="frame" x="142" y="9" width="37" height="37"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                                <color key="color" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </activityIndicatorView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.35905393835616439" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="e4a-v4-yvd" firstAttribute="centerX" secondItem="VHq-JB-OqH" secondAttribute="centerX" id="4cC-lq-pPT"/>
+                                                            <constraint firstItem="e4a-v4-yvd" firstAttribute="top" secondItem="VHq-JB-OqH" secondAttribute="top" constant="9" id="XC7-DQ-JaV"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
