@@ -10,6 +10,7 @@
 #import "Booking.h"
 #import "PlacePoint.h"
 #import "Utilities.h"
+#import "NSDate+Extensions.h"
 
 
 @interface BookingCell ()
@@ -24,7 +25,7 @@
 @implementation BookingCell
 
 - (void)configWithBooking:(Booking *)booking {
-    _dateLabel.text = [Utilities getCustomizedDate:booking.pickupDateTime];
+    _dateLabel.text = [booking.pickupDateTime getCustomizedDate];
     _estimateLabel.text = [self getEstimate:booking.distanceKm
                           durationInSeconds:booking.durationInSeconds];
     _classLabel.text = booking.category;

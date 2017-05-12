@@ -8,7 +8,7 @@
 
 #import "BookingDetailsVC.h"
 #import "Constants.h"
-#import "Utilities.h"
+#import "NSDate+Extensions.h"
 
 #import "Booking.h"
 #import "Customer.h"
@@ -130,7 +130,7 @@
 
 - (void)configAllLabels:(Booking *)booking {
     
-    self.dateLabel.text = [Utilities getCustomizedDate:booking.pickupDateTime];
+    self.dateLabel.text = [booking.pickupDateTime getCustomizedDate];
     self.nameLabel.text = booking.customer.fullName;
     self.flightLabel.text = [NSString stringWithFormat:@"Flight: %@", booking.flightInfo.uppercaseString];
     

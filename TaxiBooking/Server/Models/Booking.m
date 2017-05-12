@@ -10,6 +10,7 @@
 #import "BookingManager.h"
 #import "Driver.h"
 #import "Booking.h"
+#import "NSString+Extensions.h"
 
 
 @interface Booking ()
@@ -26,7 +27,7 @@
     _driverID = driver.driverID;
     _bookingID = [[dictionary objectForKey:@"bookingId"] integerValue];
     _reference = [dictionary objectForKey:@"reference"];
-    _pickupDateTime = [[Utilities shaderDateFormatter] dateFromString:[dictionary objectForKey:@"pickupDateTime"]];
+    _pickupDateTime = [[dictionary objectForKey:@"pickupDateTime"] dateFromServerString];
     _category = [dictionary objectForKey:@"category"];
     _adultPax = [[dictionary objectForKey:@"adultPax"] integerValue];
     _childrenPax = [[dictionary objectForKey:@"childrenPax"] integerValue];
@@ -42,7 +43,7 @@
     
     _bookingID = [[dictionary objectForKey:@"bookingId"] integerValue];
     _reference = [dictionary objectForKey:@"reference"];
-    _pickupDateTime = [[Utilities shaderDateFormatter] dateFromString:[dictionary objectForKey:@"pickupDateTime"]];
+    _pickupDateTime = [[dictionary objectForKey:@"pickupDateTime"] dateFromServerString];
     _category = [dictionary objectForKey:@"category"];
     _adultPax = [[dictionary objectForKey:@"adultPax"] integerValue];
     _childrenPax = [[dictionary objectForKey:@"childrenPax"] integerValue];
